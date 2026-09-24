@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sudimals — sudoku for kids with animals</title>
+<meta name="description" content="Real sudoku for kids aged 4 to 10: cute animals instead of numbers. No ads, no data collection, works offline. By Manalu Apps.">
+<link rel="icon" href="img/icon.png">
+<meta property="og:title" content="Sudimals — sudoku for kids with animals">
+<meta property="og:description" content="Real sudoku for kids aged 4 to 10. No ads, no data collection, works offline.">
+<meta property="og:image" content="img/icon.png">
+<style>
+  :root {
+    --sky: #EAF4FC;
+    --blue: #42A5F5;
+    --ink: #37474F;
+    --muted: #607D8B;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+    background: var(--sky);
+    color: var(--ink);
+    margin: 0;
+    line-height: 1.6;
+  }
+  main { max-width: 860px; margin: 0 auto; padding: 24px 16px 64px; }
+  a { color: var(--blue); }
+  .lang {
+    display: flex; flex-wrap: wrap; gap: 6px; justify-content: flex-end;
+    margin-bottom: 8px;
+  }
+  .lang button {
+    border: 1px solid #C5DDF2; background: #fff; color: var(--ink);
+    border-radius: 999px; padding: 6px 12px; font-size: .9rem;
+    cursor: pointer; min-height: 36px;
+  }
+  .lang button[aria-pressed="true"] { background: var(--blue); color: #fff; border-color: var(--blue); }
+  .hero {
+    display: grid; grid-template-columns: 120px 1fr; gap: 20px; align-items: center;
+    margin-top: 12px;
+  }
+  .hero img { width: 120px; height: 120px; border-radius: 28px; box-shadow: 0 6px 18px rgba(0,0,0,.12); }
+  h1 { color: var(--blue); font-size: 2.2rem; margin: 0 0 4px; line-height: 1.15; }
+  .tagline { font-size: 1.15rem; margin: 0; }
+  .badge { display: inline-block; margin-top: 18px; }
+  .badge img { height: 64px; }
+  .card {
+    background: #fff; border-radius: 16px; padding: 22px 26px;
+    box-shadow: 0 3px 12px rgba(0,0,0,.07); margin-top: 24px;
+  }
+  .card h2 { color: var(--blue); margin: 0 0 10px; font-size: 1.35rem; }
+  ul { padding-left: 1.2em; margin: 0; }
+  li { margin-bottom: .5em; }
+  .shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 24px; }
+  .shots img { width: 100%; border-radius: 18px; box-shadow: 0 3px 12px rgba(0,0,0,.1); display: block; }
+  .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
+  .fact { background: var(--sky); border-radius: 12px; padding: 12px 14px; }
+  .fact b { display: block; color: var(--blue); font-size: 1.3rem; }
+  footer { color: var(--muted); font-size: .92rem; margin-top: 32px; }
+  [data-l] { display: none; }
+  [data-l].on { display: block; }
+  li[data-l].on { display: list-item; }
+  span[data-l].on, a[data-l].on { display: inline; }
+  @media (max-width: 560px) {
+    .hero { grid-template-columns: 88px 1fr; gap: 14px; }
+    .hero img { width: 88px; height: 88px; border-radius: 20px; }
+    h1 { font-size: 1.7rem; }
+    .shots { grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+    .shots img { border-radius: 12px; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <nav class="lang" aria-label="Language">
+    <button data-set="en">English</button>
+    <button data-set="uk">Українська</button>
+    <button data-set="de">Deutsch</button>
+    <button data-set="fr">Français</button>
+    <button data-set="es">Español</button>
+    <button data-set="pt">Português</button>
+    <button data-set="pl">Polski</button>
+  </nav>
+
+  <section class="hero">
+    <img src="img/icon.png" alt="Sudimals icon">
+    <div>
+      <h1>Sudimals</h1>
+      <p class="tagline">
+        <span data-l="en">Real sudoku for kids aged 4 to 10. Cute animals instead of numbers.</span>
+        <span data-l="uk">Справжнє судоку для дітей від 4 до 10 років. Замість цифр — тваринки.</span>
+        <span data-l="de">Echtes Sudoku für Kinder von 4 bis 10. Tiere statt Zahlen.</span>
+        <span data-l="fr">Un vrai sudoku pour les enfants de 4 à 10 ans. Des animaux à la place des chiffres.</span>
+        <span data-l="es">Sudoku real para niños de 4 a 10 años. Animales en vez de números.</span>
+        <span data-l="pt">Sudoku de verdade para crianças de 4 a 10 anos. Animais no lugar dos números.</span>
+        <span data-l="pl">Prawdziwe sudoku dla dzieci od 4 do 10 lat. Zwierzątka zamiast cyfr.</span>
+      </p>
+      <a class="badge" data-l="en" href="https://play.google.com/store/apps/details?id=com.manalu.sudimals&amp;referrer=utm_source%3Dsite%26utm_campaign%3Dlanding"><img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"></a>
+      <a class="badge" data-l="uk" href="https://play.google.com/store/apps/details?id=com.manalu.sudimals&amp;referrer=utm_source%3Dsite%26utm_campaign%3Dlanding"><img alt="Доступно в Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/uk_badge_web_generic.png"></a>
+      <a class="badge" data-l="de" href="https://play.google.com/store/apps/details?id=com.manalu.sudimals&amp;referrer=utm_source%3Dsite%26utm_campaign%3Dlanding"><img alt="Jetzt bei Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/de_badge_web_generic.png"></a>
+      <a class="badge" data-l="fr" href="https://play.google.com/store/apps/details?id=com.manalu.sudimals&amp;referrer=utm_source%3Dsite%26utm_campaign%3Dlanding"><img alt="Disponible sur Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/fr_badge_web_generic.png"></a>
+      <a class="badge" data-l="es" href="https://play.google.com/store/apps/details?id=com.manalu.sudimals&amp;referrer=utm_source%3Dsite%26utm_campaign%3Dlanding"><img alt="Disponible en Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/es_badge_web_generic.png"></a>
+      <a class="badge" data-l="pt" href="https://play.google.com/store/apps/details?id=com.manalu.sudimals&amp;referrer=utm_source%3Dsite%26utm_campaign%3Dlanding"><img alt="Disponível no Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/pt-br_badge_web_generic.png"></a>
+      <a class="badge" data-l="pl" href="https://play.google.com/store/apps/details?id=com.manalu.sudimals&amp;referrer=utm_source%3Dsite%26utm_campaign%3Dlanding"><img alt="Pobierz z Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/pl_badge_web_generic.png"></a>
+    </div>
+  </section>
+
+  <section class="shots" aria-label="Screenshots">
+    <img src="img/shot-modes.png" alt="Three game sizes: 4×4, 6×6 and 9×9">
+    <img src="img/shot-map.png" alt="Level map with chapter rewards">
+    <img src="img/shot-victory.png" alt="Victory screen with stars">
+  </section>
+
+  <section class="card">
+    <div data-l="en">
+      <h2>For parents</h2>
+      <ul>
+        <li><strong>No ads at all.</strong> Not a single banner or video.</li>
+        <li><strong>No data collection.</strong> No accounts, no trackers, no internet needed. The game works fully offline.</li>
+        <li><strong>You cannot lose.</strong> A wrong animal simply bounces back. No red crosses, no timers, no pressure.</li>
+        <li><strong>One purchase, forever.</strong> The first 11 levels of each game are free. The full version is a single purchase behind a parental gate, so a child never reaches the store.</li>
+        <li><strong>Grows with your child.</strong> 4×4 for ages 4–5, 6×6 for 6–7, the classic 9×9 for 8–10.</li>
+      </ul>
+    </div>
+    <div data-l="uk">
+      <h2>Для батьків</h2>
+      <ul>
+        <li><strong>Жодної реклами.</strong> Ні банерів, ні відео.</li>
+        <li><strong>Жодного збору даних.</strong> Без акаунтів, без трекерів, без інтернету. Гра працює повністю офлайн.</li>
+        <li><strong>Не можна програти.</strong> Неправильна тваринка м'яко пружинить назад. Без червоних хрестиків, таймерів і тиску.</li>
+        <li><strong>Одна покупка назавжди.</strong> Перші 11 рівнів кожної гри безкоштовні. Повна версія — одна разова покупка за батьківським шлюзом, дитина в магазин не потрапить.</li>
+        <li><strong>Росте разом із дитиною.</strong> 4×4 для 4–5 років, 6×6 для 6–7, класичне 9×9 для 8–10.</li>
+      </ul>
+    </div>
+    <div data-l="de">
+      <h2>Für Eltern</h2>
+      <ul>
+        <li><strong>Keine Werbung.</strong> Kein einziges Banner, kein Video.</li>
+        <li><strong>Keine Datensammlung.</strong> Keine Konten, keine Tracker, kein Internet nötig. Das Spiel funktioniert komplett offline.</li>
+        <li><strong>Man kann nicht verlieren.</strong> Ein falsches Tier springt einfach zurück. Keine roten Kreuze, keine Timer, kein Druck.</li>
+        <li><strong>Ein Kauf, für immer.</strong> Die ersten 11 Level jedes Spiels sind kostenlos. Die Vollversion ist ein einmaliger Kauf hinter einer Elternsperre – ein Kind gelangt nie in den Store.</li>
+        <li><strong>Wächst mit dem Kind.</strong> 4×4 für 4–5 Jahre, 6×6 für 6–7, das klassische 9×9 für 8–10.</li>
+      </ul>
+    </div>
+    <div data-l="fr">
+      <h2>Pour les parents</h2>
+      <ul>
+        <li><strong>Aucune publicité.</strong> Pas une seule bannière, pas de vidéo.</li>
+        <li><strong>Aucune collecte de données.</strong> Pas de compte, pas de traceur, pas besoin d'Internet. Le jeu fonctionne entièrement hors ligne.</li>
+        <li><strong>Impossible de perdre.</strong> Un animal mal placé revient simplement à sa place. Pas de croix rouges, pas de chrono, pas de pression.</li>
+        <li><strong>Un seul achat, pour toujours.</strong> Les 11 premiers niveaux de chaque jeu sont gratuits. La version complète est un achat unique derrière un contrôle parental : l'enfant n'accède jamais à la boutique.</li>
+        <li><strong>Grandit avec l'enfant.</strong> 4×4 pour 4–5 ans, 6×6 pour 6–7 ans, le classique 9×9 pour 8–10 ans.</li>
+      </ul>
+    </div>
+    <div data-l="es">
+      <h2>Para padres</h2>
+      <ul>
+        <li><strong>Sin anuncios.</strong> Ni un solo banner ni vídeo.</li>
+        <li><strong>Sin recopilación de datos.</strong> Sin cuentas, sin rastreadores, sin necesidad de Internet. El juego funciona totalmente sin conexión.</li>
+        <li><strong>No se puede perder.</strong> Un animal equivocado simplemente vuelve a su sitio. Sin cruces rojas, sin cronómetro, sin presión.</li>
+        <li><strong>Una compra, para siempre.</strong> Los primeros 11 niveles de cada juego son gratis. La versión completa es una única compra tras un control parental: el niño nunca llega a la tienda.</li>
+        <li><strong>Crece con el niño.</strong> 4×4 para 4–5 años, 6×6 para 6–7, el clásico 9×9 para 8–10.</li>
+      </ul>
+    </div>
+    <div data-l="pt">
+      <h2>Para os pais</h2>
+      <ul>
+        <li><strong>Sem anúncios.</strong> Nenhum banner, nenhum vídeo.</li>
+        <li><strong>Sem coleta de dados.</strong> Sem contas, sem rastreadores, sem precisar de internet. O jogo funciona totalmente offline.</li>
+        <li><strong>Não dá para perder.</strong> Um animal errado simplesmente volta ao lugar. Sem X vermelho, sem cronômetro, sem pressão.</li>
+        <li><strong>Uma compra, para sempre.</strong> As 11 primeiras fases de cada jogo são grátis. A versão completa é uma compra única atrás de um bloqueio para pais: a criança nunca chega à loja.</li>
+        <li><strong>Cresce com a criança.</strong> 4×4 para 4–5 anos, 6×6 para 6–7, o clássico 9×9 para 8–10.</li>
+      </ul>
+    </div>
+    <div data-l="pl">
+      <h2>Dla rodziców</h2>
+      <ul>
+        <li><strong>Bez reklam.</strong> Ani jednego banera, ani wideo.</li>
+        <li><strong>Bez zbierania danych.</strong> Bez kont, bez trackerów, bez internetu. Gra działa w pełni offline.</li>
+        <li><strong>Nie da się przegrać.</strong> Złe zwierzątko po prostu wraca na miejsce. Bez czerwonych krzyżyków, bez timera, bez presji.</li>
+        <li><strong>Jeden zakup na zawsze.</strong> Pierwsze 11 poziomów każdej gry jest darmowe. Pełna wersja to jednorazowy zakup za blokadą rodzicielską: dziecko nigdy nie trafi do sklepu.</li>
+        <li><strong>Rośnie razem z dzieckiem.</strong> 4×4 dla 4–5 lat, 6×6 dla 6–7, klasyczne 9×9 dla 8–10.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>
+      <span data-l="en">What's inside</span><span data-l="uk">Що всередині</span><span data-l="de">Was drin ist</span><span data-l="fr">Ce qu'il y a dedans</span><span data-l="es">Qué incluye</span><span data-l="pt">O que tem dentro</span><span data-l="pl">Co jest w środku</span>
+    </h2>
+    <div class="facts">
+      <div class="fact"><b>300</b>
+        <span data-l="en">levels: 100 in each of 4×4, 6×6, 9×9</span><span data-l="uk">рівнів: по 100 у 4×4, 6×6 і 9×9</span><span data-l="de">Level: je 100 in 4×4, 6×6, 9×9</span><span data-l="fr">niveaux : 100 en 4×4, 6×6 et 9×9</span><span data-l="es">niveles: 100 en 4×4, 6×6 y 9×9</span><span data-l="pt">fases: 100 em 4×4, 6×6 e 9×9</span><span data-l="pl">poziomów: po 100 w 4×4, 6×6 i 9×9</span></div>
+      <div class="fact"><b>9</b>
+        <span data-l="en">animals, each with its own voice</span><span data-l="uk">тваринок, кожна зі своїм голосом</span><span data-l="de">Tiere, jedes mit eigener Stimme</span><span data-l="fr">animaux, chacun avec sa voix</span><span data-l="es">animales, cada uno con su voz</span><span data-l="pt">animais, cada um com sua voz</span><span data-l="pl">zwierzątek, każde z własnym głosem</span></div>
+      <div class="fact"><b>6</b>
+        <span data-l="en">heroes and 10 rewards to earn</span><span data-l="uk">героїв і 10 нагород за прогрес</span><span data-l="de">Helden und 10 Belohnungen</span><span data-l="fr">héros et 10 récompenses</span><span data-l="es">héroes y 10 recompensas</span><span data-l="pt">heróis e 10 recompensas</span><span data-l="pl">bohaterów i 10 nagród</span></div>
+      <div class="fact"><b>7</b>
+        <span data-l="en">languages</span><span data-l="uk">мов</span><span data-l="de">Sprachen</span><span data-l="fr">langues</span><span data-l="es">idiomas</span><span data-l="pt">idiomas</span><span data-l="pl">języków</span></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div data-l="en"><h2>About the studio</h2><p>Sudimals is made by Manalu Apps, a tiny Ukrainian studio based in Germany. We wanted a first sudoku for our own kids: real logic, no ads, no trackers, no fine print. That is the whole game.</p></div>
+    <div data-l="uk"><h2>Про студію</h2><p>Sudimals робить Manalu Apps, маленька українська студія в Німеччині. Ми хотіли перше судоку для власних дітей: справжня логіка, без реклами, без трекерів, без дрібного тексту. Це і є вся гра.</p></div>
+    <div data-l="de"><h2>Über das Studio</h2><p>Sudimals kommt von Manalu Apps, einem winzigen ukrainischen Studio in Deutschland. Wir wollten ein erstes Sudoku für unsere eigenen Kinder: echte Logik, keine Werbung, keine Tracker, kein Kleingedrucktes. Das ist das ganze Spiel.</p></div>
+    <div data-l="fr"><h2>À propos du studio</h2><p>Sudimals est créé par Manalu Apps, un tout petit studio ukrainien installé en Allemagne. Nous voulions un premier sudoku pour nos propres enfants : de la vraie logique, sans pub, sans traceurs, sans petites lignes. C'est tout le jeu.</p></div>
+    <div data-l="es"><h2>Sobre el estudio</h2><p>Sudimals lo hace Manalu Apps, un pequeño estudio ucraniano con sede en Alemania. Queríamos un primer sudoku para nuestros propios hijos: lógica de verdad, sin anuncios, sin rastreadores, sin letra pequeña. Eso es todo el juego.</p></div>
+    <div data-l="pt"><h2>Sobre o estúdio</h2><p>Sudimals é feito pela Manalu Apps, um pequeno estúdio ucraniano na Alemanha. Queríamos um primeiro sudoku para nossos próprios filhos: lógica de verdade, sem anúncios, sem rastreadores, sem letras miúdas. É isso que é o jogo.</p></div>
+    <div data-l="pl"><h2>O studiu</h2><p>Sudimals tworzy Manalu Apps, malutkie ukraińskie studio z siedzibą w Niemczech. Chcieliśmy pierwszego sudoku dla własnych dzieci: prawdziwa logika, bez reklam, bez trackerów, bez drobnego druku. To cała gra.</p></div>
+  </section>
+
+  <section class="card">
+    <div data-l="en"><h2>Press &amp; teachers</h2><p>Reviewers, teachers and kindergartens: write to us and we will send a promo code for the full version, screenshots in 7 languages and the icon. No conditions attached.</p></div>
+    <div data-l="uk"><h2>Пресі та вчителям</h2><p>Оглядачам, вчителям і садочкам: напишіть нам, і ми надішлемо промокод на повну версію, скріншоти 7 мовами та іконку. Без жодних умов.</p></div>
+    <div data-l="de"><h2>Presse &amp; Lehrkräfte</h2><p>Rezensenten, Lehrkräfte und Kitas: Schreiben Sie uns, und wir schicken einen Promo-Code für die Vollversion, Screenshots in 7 Sprachen und das Icon. Ohne Bedingungen.</p></div>
+    <div data-l="fr"><h2>Presse &amp; enseignants</h2><p>Testeurs, enseignants et écoles maternelles : écrivez-nous, nous vous enverrons un code promo pour la version complète, des captures d'écran en 7 langues et l'icône. Sans aucune condition.</p></div>
+    <div data-l="es"><h2>Prensa y docentes</h2><p>Reseñadores, docentes y escuelas infantiles: escríbannos y les enviaremos un código promocional para la versión completa, capturas en 7 idiomas y el icono. Sin condiciones.</p></div>
+    <div data-l="pt"><h2>Imprensa e professores</h2><p>Avaliadores, professores e creches: escrevam para nós e enviaremos um código promocional da versão completa, capturas de tela em 7 idiomas e o ícone. Sem condições.</p></div>
+    <div data-l="pl"><h2>Prasa i nauczyciele</h2><p>Recenzenci, nauczyciele i przedszkola: napiszcie do nas, a wyślemy kod promocyjny na pełną wersję, zrzuty ekranu w 7 językach i ikonę. Bez żadnych warunków.</p></div>
+    <p><a href="mailto:manalu.app@gmail.com">manalu.app@gmail.com</a></p>
+  </section>
+
+  <footer>
+    © 2026 Manalu Apps ·
+    <a href="../privacy.html"><span data-l="en">Privacy policy</span><span data-l="uk">Політика приватності</span><span data-l="de">Datenschutz</span><span data-l="fr">Confidentialité</span><span data-l="es">Privacidad</span><span data-l="pt">Privacidade</span><span data-l="pl">Prywatność</span></a>
+    · Google Play and the Google Play logo are trademarks of Google LLC.
+  </footer>
+</main>
+
+<script>
+  // Мова сторінки: з адреси (?lang=uk), інакше з браузера; кнопки перемикають вручну.
+  (function () {
+    var langs = ['en', 'uk', 'de', 'fr', 'es', 'pt', 'pl'];
+    function apply(lang) {
+      if (langs.indexOf(lang) < 0) lang = 'en';
+      document.documentElement.lang = lang;
+      var nodes = document.querySelectorAll('[data-l]');
+      for (var i = 0; i < nodes.length; i++) {
+        nodes[i].classList.toggle('on', nodes[i].getAttribute('data-l') === lang);
+      }
+      var buttons = document.querySelectorAll('.lang button');
+      for (var j = 0; j < buttons.length; j++) {
+        buttons[j].setAttribute('aria-pressed', buttons[j].getAttribute('data-set') === lang ? 'true' : 'false');
+      }
+    }
+    var fromUrl = new URLSearchParams(location.search).get('lang');
+    var fromBrowser = (navigator.language || 'en').slice(0, 2).toLowerCase();
+    apply(fromUrl || fromBrowser);
+    var buttons = document.querySelectorAll('.lang button');
+    for (var k = 0; k < buttons.length; k++) {
+      buttons[k].addEventListener('click', function () { apply(this.getAttribute('data-set')); });
+    }
+  })();
+</script>
+</body>
+</html>
