@@ -12,6 +12,9 @@
   a { color: #1976D2; }
   .logo { display: block; width: min(340px, 80%); height: auto; margin: 0 auto 12px; }
   .logo.square { width: 150px; border-radius: 28px; }
+  .shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; max-width: 480px; margin: 18px auto 0; }
+  .shots img { width: 100%; aspect-ratio: 9 / 16; object-fit: cover; object-position: top; border-radius: 12px; display: block; }
+  .promo { display: block; width: min(250px, 100%); height: auto; margin: 18px auto 0; border-radius: 16px; background: #000; }
   .card { background: #fff; border-radius: 16px; padding: 24px 28px; box-shadow: 0 3px 12px rgba(0,0,0,.07); margin-top: 24px; }
   .btn { display: inline-block; background: #1976D2; color: #fff; text-decoration: none; font-weight: 700; padding: 12px 20px; border-radius: 12px; margin: 6px 8px 6px 0; }
   .previews { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 16px; }
@@ -32,6 +35,8 @@
     <h2 style="margin-top:0">About Frog Bop</h2>
     <p>Frog Bop is a cheerful reaction game for the whole family. Free to play. The game shows non-personalized ads; a single one-time purchase removes them forever. Android, on Google Play.</p>
     <a class="btn" href="https://play.google.com/store/apps/details?id=com.manaluapps.frogbop&referrer=utm_source%3Dpinterest%26utm_medium%3Dpin%26utm_campaign%3Dp4">Get Frog Bop on Google Play</a>
+    <div class="shots"><img src="../media/frog-bop/shot-1.jpg" alt="Frog Bop screenshot 1" loading="lazy"><img src="../media/frog-bop/shot-2.jpg" alt="Frog Bop screenshot 2" loading="lazy"><img src="../media/frog-bop/shot-3.jpg" alt="Frog Bop screenshot 3" loading="lazy"></div>
+    <video class="promo" controls playsinline preload="none" poster="../media/frog-bop/poster.jpg" aria-label="Frog Bop promo video"><source src="../media/frog-bop/promo.mp4" type="video/mp4"></video>
   </div>
   <p>Free for home and classroom use. Please share a link to this page instead of the PDF.</p>
   <footer><a href="../../">Manalu Apps</a> · <a href="../../impressum.html">Impressum</a></footer>
